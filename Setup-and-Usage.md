@@ -1,6 +1,8 @@
 
 # Setup and Usage
 
+## Downloading and Install
+
 First, download the script by clicking the big "Code" button at the top right of the main repo page, then clicking "Download ZIP." Once it downloads, you can extract the zip file wherever you like.
 
 Make sure to show hidden files. This can be done by pressing Command + Shift + `.` (Period)
@@ -8,6 +10,9 @@ Make sure to show hidden files. This can be done by pressing Command + Shift + `
 Then move the `.scripts` folder into your home (user) folder. You can quickly open this by pressing Command + Shift + H
 
 You are free to change the location of the scripts to your liking, but you'll have to adjust the location that the other commands in this guide use.
+
+
+## Script Configuration
 
 Now open the `.scripts` folder and open `video-mover.sh` in your preferred text editor to set up the script.
 
@@ -35,6 +40,9 @@ finalName="moved-video.mp4"
 ```
 
 You don't need to set the original file's name, since the program will automatically move the most recently modified file. Do keep this in mind though when setting up your folders, it will copy the most recent of ***ANY*** file. Be careful!
+
+
+## Scheduling/Automation Setup
 
 Next, to make the script executable you need to first open a terminal and type in `cd ~/.scripts` and press enter to switch your current directory to the `.scripts` folder, then run this command:
 ```sh
