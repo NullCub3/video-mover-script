@@ -19,5 +19,7 @@ if [ -d ${downloadFolder} ]; then
 		exit
 	fi
 	echo "Error, final folder does not exist"
+	exit
 fi
 echo "Error, download folder does not exist"
+exit
