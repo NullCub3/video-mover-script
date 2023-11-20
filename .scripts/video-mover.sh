@@ -16,7 +16,7 @@ finalName=""
 ###                                          ###
 ################################################
 
-if [ -z "${downloadFolder}" ] || [ -z "$finalFolder" ] || [ -z "$finalName" ]; then
+if [ -z "${downloadFolder}" ] || [ -z "${finalFolder}" ] || [ -z "${finalName}" ]; then
 	echo "Error, script not set up properly! Please configure the script before running."
 	exit
 elif ! [ -d "${downloadFolder}" ]; then
@@ -42,7 +42,7 @@ if [ -z "${recentFile}" ]; then
 	exit
 fi
 
-mv "${recentFile}" "$finalFolder"/"$finalName"
+mv "${recentFile}" "${finalFolder}"/"${finalName}"
 
 echo "File move complete"
 exit
