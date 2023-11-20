@@ -72,7 +72,7 @@ For example, the config to have the script run every day at 8:30 in the morning 
 30 08 * * * cd ~/.scripts && ./video-mover.sh
 ```
 
-Press escape to stop editing. Then press `:` to open the command window inside the editor, and type in `wq` and then press enter to save and quit.
+Press escape to stop editing. Then press `:` to open the command window inside the editor, type in `wq`, and then press enter to save and quit.
 
 Your system should now run the `video-mover.sh` script. 
 
