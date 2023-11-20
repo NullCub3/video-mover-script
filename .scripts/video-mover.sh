@@ -13,6 +13,10 @@ finalName=""
 if [ -d ${downloadFolder} ]; then
 	cd ${downloadFolder}
 	recentFile=$(ls -Art | tail -n 1)
+	if [ -z "${recentFile}" ]; then
+		echo "Error, no files found to move"
+		exit
+	fi
 	if [ -d ${finalFolder} ]; then
 		mv ./${recentFile} $finalFolder/$finalName
 		echo "File move complete"
