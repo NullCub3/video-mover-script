@@ -10,20 +10,27 @@ finalFolder=""
 # Make sure to add the full file extension
 finalName=""
 
-if [ -d ${downloadFolder} ]; then
-	cd ${downloadFolder}
-	recentFile=$(ls -Art | tail -n 1)
-	if [ -z "${recentFile}" ]; then
-		echo "Error, no files found to move"
-		exit
-	fi
-	if [ -d ${finalFolder} ]; then
-		mv ./${recentFile} $finalFolder/$finalName
-		echo "File move complete"
-		exit
-	fi
+if [ -z "${downloadFolder}" ] || [ -z "$finalFolder" ] || [ -z "$finalName" ]; then
+	echo "Error, script not set up properly! Please configure the script before running."
+	exit
+elif ! [ -d "${downloadFolder}" ]; then
+	echo "Error, download folder does not exist"
+	exit
+elif ! [ -d "${finalFolder}" ]; then
 	echo "Error, final folder does not exist"
 	exit
 fi
-echo "Error, download folder does not exist"
+
+cd "${downloadFolder}" || echo "Error changing directory" && exit
+
+recentFile=$(find . -maxdepth 1 -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" ")
+
+if [ -z "${recentFile}" ]; then
+	echo "Error, no files found to move"
+	exit
+fi
+
+mv "${recentFile}" "$finalFolder"/"$finalName"
+
+echo "File move complete"
 exit
