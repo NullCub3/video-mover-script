@@ -67,6 +67,11 @@ MM HH * * * cd ~/.scripts && ./video-mover.sh
 
 **Important:** Replace MM and HH with the minute and hour you want the command to run each day, respectively. This uses 24 hour time, so 8am would be 08, and 9pm would be 21.
 
+For example, the config to have the script run every day at 8:30 in the morning would look like this:
+```
+30 08 * * * cd ~/.scripts && ./video-mover.sh
+```
+
 Press escape to stop editing. Then press `:` to open the command window inside the editor, and type in `wq` and then press enter to save and quit.
 
 Your system should now run the `video-mover.sh` script. 
