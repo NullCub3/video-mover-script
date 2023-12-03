@@ -76,6 +76,8 @@ Press escape to stop editing. Then press `:` to open the command window inside t
 
 Your system should now run the `video-mover.sh` script. 
 
+## Further Information
+
 If you want to edit the schedule for the script, simply run `crontab -e` and use the same commands as before to edit the file.
 
 To delete or disable the schedule, either remove the line defining the schedule, or add a hashtag (`#`) to the beginning of the line to disable it.
